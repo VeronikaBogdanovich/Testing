@@ -5,7 +5,7 @@ public class Main {
         int[] marks2 = {5,6,7};
         int[] marksBest = {9,7,8};
 
-        // ---------------------------------------
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
         Student student100 = new Student("ann", "bola");
         student100.addMarks(marks1);
