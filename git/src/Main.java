@@ -7,9 +7,9 @@ public class Main {
 
         // ---------------------------------------
 
-        Student student0 = new Student("ann", "bola");
-        student0.addMarks(marks1);
-        System.out.println("Среднее первого студента: " + student0.getAVG());
+        Student student4 = new Student("ann", "bola");
+        student4.addMarks(marks1);
+        System.out.println("Среднее первого студента: " + student4.getAVG());
 
         Student student1 = new Student("cia", "dia");
         student1.addMarks(marks2);
@@ -22,11 +22,11 @@ public class Main {
 
         Group group = new Group();
 
-        group.addStudent(student0);
+        group.addStudent(student4);
         group.addStudent(student1);
         group.addStudent(student2);
 
-        System.out.println(student0.toString());
+        System.out.println(student4.toString());
         System.out.println(student1.toString());
         System.out.println(student2.toString());
 
