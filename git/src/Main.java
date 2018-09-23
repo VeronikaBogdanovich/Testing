@@ -1,4 +1,4 @@
-// First commit master
+// First commit develop
 public class Main {
     public static void main(String[] args) {
         int[] marks1 = {1,2,3,4};
