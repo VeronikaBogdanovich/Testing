@@ -5,6 +5,8 @@ public class Main {
         int[] marks2 = {5,6,7};
         int[] marksBest = {9,7,8};
 
+        // ---------------------------------------
+
         Student student0 = new Student("ann", "bola");
         student0.addMarks(marks1);
         System.out.println("Среднее первого студента: " + student0.getAVG());
