@@ -16,13 +16,33 @@ public class TriangleUtilTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void TriangleUtil_canCreateTriangle_AssertSidesCanNotBeEqualToZero() {
-        this.triangleUtil.canCreateTriangle(0, 0, 0);
+    public void TriangleUtil_canCreateTriangle_AssertACanNotBeEqualToZero() {
+        this.triangleUtil.canCreateTriangle(0, 1, 2);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void TriangleUtil_canCreateTriangle_AssertSidesCanNotBeLessThanZero() {
-        this.triangleUtil.canCreateTriangle(-1, -1, -1);
+    public void TriangleUtil_canCreateTriangle_AssertACanNotBeLessThanZero() {
+        this.triangleUtil.canCreateTriangle(-1, 1, 2);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void TriangleUtil_canCreateTriangle_AssertBCanNotBeEqualToZero() {
+        this.triangleUtil.canCreateTriangle(1, 0, 2);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void TriangleUtil_canCreateTriangle_AssertBCanNotBeLessThanZero() {
+        this.triangleUtil.canCreateTriangle(1, -1, 2);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void TriangleUtil_canCreateTriangle_AssertCCanNotBeEqualToZero() {
+        this.triangleUtil.canCreateTriangle(2, 1, 0);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void TriangleUtil_canCreateTriangle_AssertCCanNotBeLessThanZero() {
+        this.triangleUtil.canCreateTriangle(1, 1, -2);
     }
 
     @Test
