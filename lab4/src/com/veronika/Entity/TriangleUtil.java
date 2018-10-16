@@ -1,4 +1,4 @@
-package com.veronika.Entity;
+package com.veronika.entity;
 
 public class TriangleUtil {
     public TriangleUtil() {
