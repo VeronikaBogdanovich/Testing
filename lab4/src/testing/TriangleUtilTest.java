@@ -15,36 +15,34 @@ public class TriangleUtilTest {
         triangleUtil = new TriangleUtil();
     }
 
-    @DataProvider
-    public static Object[][] triangleZeroSides() {
-        return new Object[][]{
-                {0, 1, 2},
-                {1, 0, 2},
-                {1, 2, 0}
-        };
+    @Test
+    public void TriangleUtil_canCreateTriangle_AssertACanNotBeEqualToZero() {
+        Assert.assertFalse(triangleUtil.canCreateTriangle(0, 1, 2));
     }
 
-    @DataProvider
-    public static Object[][] triangleNegativeSides() {
-        return new Object[][]{
-                {-1, 1, 2},
-                {1, -1, 2},
-                {1, 2, -1}
-        };
+    @Test
+    public void TriangleUtil_canCreateTriangle_AssertACanNotBeLessThanZero() {
+        Assert.assertFalse(triangleUtil.canCreateTriangle(-1, 1, 2));
     }
 
-	@Test(dataProvider = "triangleZeroSides")
-    public void canNotBiuldTriangleWhenAnySideEqualsToZero(int a, int b, int c) {
-        TriangleUtil triangle = new TriangleUtil(a, b, c);
-
-        boolean assertException = TriangleValidation.canBuildTriangle(triangle);
+    @Test
+    public void TriangleUtil_canCreateTriangle_AssertBCanNotBeEqualToZero() {
+        Assert.assertFalse(triangleUtil.canCreateTriangle(1, 0, 2));
     }
 
-    @Test(dataProvider = "triangleNegativeSides")
-    public void canNotBiuldTriangleWhenAnyOfSidesLessThanZero(int a, int b, int c) {
-        TriangleUtil triangle = new TriangleUtil(a, b, c);
+    @Test
+    public void TriangleUtil_canCreateTriangle_AssertBCanNotBeLessThanZero() {
+        Assert.assertFalse(triangleUtil.canCreateTriangle(1, -1, 2));
+    }
 
-        boolean assertException = TriangleValidation.canBuildTriangle(triangle);
+    @Test
+    public void TriangleUtil_canCreateTriangle_AssertCCanNotBeEqualToZero() {
+        Assert.assertFalse(triangleUtil.canCreateTriangle(2, 1, 0));
+    }
+
+    @Test
+    public void TriangleUtil_canCreateTriangle_AssertCCanNotBeLessThanZero() {
+        Assert.assertFalse(triangleUtil.canCreateTriangle(1, 1, -2));
     }
 
     @Test
