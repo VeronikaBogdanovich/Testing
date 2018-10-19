@@ -33,6 +33,20 @@ public class TriangleUtilTest {
         };
     }
 
+	@Test(dataProvider = "triangleZeroSides")
+    public void canNotBiuldTriangleWhenAnySideEqualsToZero(int a, int b, int c) {
+        TriangleUtil triangle = new TriangleUtil(a, b, c);
+
+        boolean assertException = TriangleValidation.canBuildTriangle(triangle);
+    }
+
+    @Test(dataProvider = "triangleNegativeSides")
+    public void canNotBiuldTriangleWhenAnyOfSidesLessThanZero(int a, int b, int c) {
+        TriangleUtil triangle = new TriangleUtil(a, b, c);
+
+        boolean assertException = TriangleValidation.canBuildTriangle(triangle);
+    }
+
     @Test
     public void assertTrueWhenSidesAreValid() {
         Assert.assertTrue(triangleUtil.canCreateTriangle(3, 4, 6));
