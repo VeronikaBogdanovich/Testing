@@ -8,29 +8,25 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "/Users/A.Maklakov/Documents/Angular-testing/node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/veronikabogdanovich/Documents/Angular-testing/node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver");
 
         WebDriver driver = new ChromeDriver();
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
         // go to the webpage and select "Find races"
         driver.get("https://www.emirates.com/ru");
-        Thread.sleep(5000);
 
         // insert in take off input our text
         WebElement buttonContinue = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#panel0 > div > div > div > section > div:nth-child(4) > div:nth-child(1) > div.grid__item.medium--one-fifth.search-flight__continue > a")));
         buttonContinue.click();
-        Thread.sleep(5000);
 
 //         Click 8 times on add adult passenger button to make maximum of adults
         WebElement addPasengers = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#tcm\\3a 69-13437")));
         addPasengers.click();
-        Thread.sleep(5000);
 
 
         WebElement addBabies = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#panel0 > div > div > div > section > div:nth-child(4) > div.search-flight--hidden-container.grid > div.grid__item.medium--one-third.search-flight__passengers > div.js-dropdown.dropdown-container.dropdown-container--has-help.show > div > div.dropdown > section > div:nth-child(7) > button.js-increment-increase.increment-field__button.increment-field__increase")));
         addBabies.click();
-        Thread.sleep(5000);
 
         // Compare actual value with expected
         String actual = wait.until(ExpectedConditions.presenceOfElementLocated(By.className("passenger-inline-error"))).getText();
