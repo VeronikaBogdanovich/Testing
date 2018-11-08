@@ -47,49 +47,49 @@ public class TriangleUtilTest {
     @Test
     @UseDataProvider("triangleZeroSizes")
     public void assertFalseWhenOneSideIsZero(double a, double b, double c) {
-        Assert.assertFalse(TriangleUtil.canCreateTriangle(new TriangleUtil(a, b, c)));
+        Assert.assertFalse(new TriangleUtil(a, b, c).canCreateTriangle());
     }
 
     @Test
     @UseDataProvider("triangleNegativeSizes")
     public void assertFalseWhenOneSideIsNegative(double a, double b, double c) {
-        Assert.assertFalse(TriangleUtil.canCreateTriangle(new TriangleUtil(a, b, c)));
+        Assert.assertFalse(new TriangleUtil(a, b, c).canCreateTriangle());
     }
 
     @Test
     @UseDataProvider("sidesAreNotValid")
     public void assertFalseWhenSidesAreValid(double a, double b, double c) {
-        Assert.assertFalse(TriangleUtil.canCreateTriangle(new TriangleUtil(a, b, c)));
+        Assert.assertFalse(new TriangleUtil(a, b, c).canCreateTriangle());
     }
 
     @Test
     @UseDataProvider("sidesAreNotValid")
     public void assertFalseWhenSidesAreNotValid(double a, double b, double c) {
-        Assert.assertFalse(TriangleUtil.canCreateTriangle(new TriangleUtil(a, b, c)));
+        Assert.assertFalse(new TriangleUtil(a, b, c).canCreateTriangle());
     }
 
     @Test
     public void assertFalseWhenAPlusBEqualsC() {
-        Assert.assertFalse(TriangleUtil.canCreateTriangle(new TriangleUtil(3, 4, 7)));
+        Assert.assertFalse(new TriangleUtil(3, 4, 7).canCreateTriangle());
     }
 
     @Test
     public void assertTrueWhenSidesAreEqualAndGreaterThanZero() {
-        Assert.assertTrue(TriangleUtil.canCreateTriangle(new TriangleUtil(9, 9, 9)));
+        Assert.assertTrue(new TriangleUtil(9, 9, 9).canCreateTriangle());
     }
 
     @Test
     public void assertTrueWhenTriangleRight() {
-        Assert.assertTrue(TriangleUtil.canCreateTriangle(new TriangleUtil(3, 4, 5)));
+        Assert.assertTrue(new TriangleUtil(3, 4, 5).canCreateTriangle());
     }
 
     @Test
     public void assertTrueWhenAEqualsBAndAPlusBMoreThanC() {
-        Assert.assertTrue(TriangleUtil.canCreateTriangle(new TriangleUtil(3, 3, 5)));
+        Assert.assertTrue(new TriangleUtil(3, 3, 5).canCreateTriangle());
     }
 
     @Test
     public void assertFalseWhenAEqulsBAndAPlusBLessThanC() {
-        Assert.assertFalse(TriangleUtil.canCreateTriangle(new TriangleUtil(2, 2, 5)));
+        Assert.assertFalse(new TriangleUtil(2, 2, 5).canCreateTriangle());
     }
 }

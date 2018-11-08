@@ -9,10 +9,10 @@ public class TriangleUtil {
         this.c = c;
     }
 
-    public static boolean canCreateTriangle(TriangleUtil triangle) {
-         if (!(triangle.a > 0 || triangle.b > 0 || triangle.c > 0)) {
-            return false;
+    boolean canCreateTriangle() {
+            if (a <= 0 || b <= 0 || c <= 0) {
+                return false;
+            }
+            return a + b > c && a + c > b && b + c > a;
         }
-        return triangle.a + triangle.b > triangle.c && triangle.a + triangle.c > triangle.b && triangle.b + triangle.c > triangle.a;
-    }
 }
