@@ -1,11 +1,7 @@
-package testing;
-
-import com.veronika.entity.TriangleUtil;
 import com.tngtech.java.junit.dataprovider.DataProvider;
 import com.tngtech.java.junit.dataprovider.DataProviderRunner;
 import com.tngtech.java.junit.dataprovider.UseDataProvider;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -15,18 +11,18 @@ public class TriangleUtilTest {
     @DataProvider
     public static Object[][] triangleZeroSizes() {
         return new Object[][]{
-                {0, 4, 5},
-                {3, 0, 5},
-                {3, 4, 0}
+                {0, 1, 2},
+                {1, 0, 2},
+                {3, 2, 0}
         };
     }
 
     @DataProvider
     public static Object[][] triangleNegativeSizes() {
         return new Object[][]{
-                {-3, 4, 5},
-                {3, -4, 5},
-                {3, 4, -5}
+                {-1, 2, 3},
+                {1, -2, 3},
+                {1, 2, -3}
         };
     }
 
@@ -48,58 +44,52 @@ public class TriangleUtilTest {
         };
     }
 
-
-    @Before
-    public void init() {
-        triangleUtil = new TriangleUtil();
-    }
-
     @Test
     @UseDataProvider("triangleZeroSizes")
     public void assertFalseWhenOneSideIsZero(double a, double b, double c) {
-        Assert.assertFalse(triangleUtil.canCreateTriangle(a, b, c));
+        Assert.assertFalse(TriangleUtil.canCreateTriangle(new TriangleUtil(a, b, c)));
     }
 
     @Test
     @UseDataProvider("triangleNegativeSizes")
     public void assertFalseWhenOneSideIsNegative(double a, double b, double c) {
-        Assert.assertFalse(triangleUtil.canCreateTriangle(a, b, c));
+        Assert.assertFalse(TriangleUtil.canCreateTriangle(new TriangleUtil(a, b, c)));
     }
 
     @Test
     @UseDataProvider("sidesAreNotValid")
-    public void assertTrueWhenSidesAreValid(double a, double b, double c) {
-        Assert.assertTrue(triangleUtil.canCreateTriangle(a, b, c));
+    public void assertFalseWhenSidesAreValid(double a, double b, double c) {
+        Assert.assertFalse(TriangleUtil.canCreateTriangle(new TriangleUtil(a, b, c)));
     }
 
     @Test
     @UseDataProvider("sidesAreNotValid")
     public void assertFalseWhenSidesAreNotValid(double a, double b, double c) {
-        Assert.assertFalse(triangleUtil.canCreateTriangle(a, b, c));
+        Assert.assertFalse(TriangleUtil.canCreateTriangle(new TriangleUtil(a, b, c)));
     }
 
     @Test
     public void assertFalseWhenAPlusBEqualsC() {
-        Assert.assertFalse(triangleUtil.canCreateTriangle(3, 4, 7));
+        Assert.assertFalse(TriangleUtil.canCreateTriangle(new TriangleUtil(3, 4, 7)));
     }
 
     @Test
     public void assertTrueWhenSidesAreEqualAndGreaterThanZero() {
-        Assert.assertTrue(triangleUtil.canCreateTriangle(9, 9, 9));
+        Assert.assertTrue(TriangleUtil.canCreateTriangle(new TriangleUtil(9, 9, 9)));
     }
 
     @Test
     public void assertTrueWhenTriangleRight() {
-        Assert.assertTrue(triangleUtil.canCreateTriangle(3, 4, 5));
+        Assert.assertTrue(TriangleUtil.canCreateTriangle(new TriangleUtil(3, 4, 5)));
     }
 
     @Test
-    public void assertTrueWhenAEqulsBAndAPlusBMoreThanC() {
-        Assert.assertTrue(triangleUtil.canCreateTriangle(3, 3, 5));
+    public void assertTrueWhenAEqualsBAndAPlusBMoreThanC() {
+        Assert.assertTrue(TriangleUtil.canCreateTriangle(new TriangleUtil(3, 3, 5)));
     }
 
     @Test
     public void assertFalseWhenAEqulsBAndAPlusBLessThanC() {
-        Assert.assertFalse(triangleUtil.canCreateTriangle(2, 2, 5));
+        Assert.assertFalse(TriangleUtil.canCreateTriangle(new TriangleUtil(2, 2, 5)));
     }
 }
