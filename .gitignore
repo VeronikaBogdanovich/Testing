@@ -17,3 +17,6 @@ Thumbs.db
 out
 build
 bin
+
+# Maven
+target
