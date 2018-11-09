@@ -19,7 +19,6 @@ public class Main {
 
         // go to the webpage and select "Find races"
         driver.get("https://www.emirates.com/ru");
-        driver.manage().window().maximize();
 
         // insert in take off input our text
         By continueSelector = By.cssSelector("#panel0 > div > div > div > section > div:nth-child(4) > div:nth-child(1) > div.grid__item.medium--one-fifth.search-flight__continue > a");
