@@ -10,39 +10,27 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage {
-
-    private static String URL_MATCH = "/";
     private WebDriver driver;
 
     /**
      * Button "Continue"
      */
-    @FindBy(css = "#panel0 > div > div > div > section > div:nth-child(4) > div:nth-child(1) > div.grid__item.medium--one-fifth.search-flight__continue > a")
+    @FindBy(css = "div.search-flight__continue > a")
     private WebElement bContinue;
-
-    @FindBy(css = "[id=\"\\39 5528ef3-10ab-4f78-a8d0-d41a56dafd6f\"]")
-    private WebElement iAirportFrom;
-
-    @FindBy(css = "other selector")
-    private WebElement iAirportTo;
 
     @FindBy(css = "#tcm\\3a 69-13437")
     private WebElement bOpenPassengersDropdown;
 
-    @FindBy(xpath = "//*[@id=\"panel0\"]/div/div/div/section/div[4]/div[2]/div[1]/div[1]/div/div[2]/section/div[5]/button[1]")
+    @FindBy(xpath = "//span[text()='Младенцы']/../../../button[contains(@class, 'increment-field__increase')]")
     private WebElement bAddBabies;
 
     @FindBy(className = "passenger-inline-error")
     private WebElement babiesErrorText;
 
-    @FindBy(xpath = "//*[@id=\"panel0\"]/div/div/div/section/div[4]/div[2]/div[3]/form/button")
+    @FindBy(xpath = "//button[contains(text(), 'Искать')]")
     private WebElement bFindRaces;
 
     public MainPage(WebDriver driver) {
-        if (!driver.getCurrentUrl().contains(URL_MATCH)) {
-            throw new IllegalStateException("This is not the page you are expected");
-        }
-
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
