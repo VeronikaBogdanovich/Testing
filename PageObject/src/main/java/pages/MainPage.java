@@ -24,9 +24,22 @@ public class MainPage {
     @FindBy(className = "passenger-inline-error")
     private WebElement babiesErrorText;
 
+    @FindBy(xpath = "//ul[@class='widget__inline__error_listing']")
+    private WebElement errors;
+
+    @FindBy(xpath = "//div[@class='grid__item medium--one-third']/form")
+    private WebElement Search;
+
     public MainPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
+    }
+
+    public String allFieldsAreEmpty() {
+        scrollToContent();
+        clickToContinue();
+        clickToSearch();
+        return errors.getText();
     }
 
     public String maxCountOfBabies() {
@@ -36,13 +49,20 @@ public class MainPage {
         addInfants();
         return babiesErrorText.getText();
     }
+
     private MainPage scrollToContent() {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", content);
         return this;
     }
 
+
     private MainPage clickToContinue() {
         Continue.click();
+        return this;
+    }
+
+    private MainPage clickToSearch() {
+        Search.click();
         return this;
     }
 
@@ -55,7 +75,6 @@ public class MainPage {
         AddBabies.click();
         return this;
     }
-
 
 
     }

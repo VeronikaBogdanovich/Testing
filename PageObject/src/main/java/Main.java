@@ -20,6 +20,16 @@ public class Main {
         }
 
         @Test
+        public void findWhenAllFieldsAreEmpty() {
+            String expectedError = "Please choose a departure airport\n" +
+                    "Please choose an arrival airport\n" +
+                    "Please choose a departure date\n" +
+                    "Please choose a return date";
+            Assert.assertEquals(mainPage.allFieldsAreEmpty(), expectedError);
+
+        }
+
+        @Test
         public void findWhenNumberOfInfantIsMoreThanAdults(){
             String expectedError = "You can book for max 1 Lap Infant";
             Assert.assertEquals(mainPage.maxCountOfBabies(), expectedError);
