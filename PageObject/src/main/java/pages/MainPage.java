@@ -29,7 +29,7 @@ public class MainPage {
         this.driver = driver;
     }
 
-    public String MaxCountOfBabies() {
+    public String maxCountOfBabies() {
         scrollToContent();
         clickToContinue();
         clickToAddNewPassenger();

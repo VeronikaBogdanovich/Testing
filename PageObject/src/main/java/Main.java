@@ -20,9 +20,9 @@ public class Main {
         }
 
         @Test
-        public void findWhenAllFieldsAreEmpty(){
+        public void findWhenNumberOfInfantIsMoreThanAdults(){
             String expectedError = "You can book for max 1 Lap Infant";
-            Assert.assertEquals(mainPage.MaxCountOfBabies(), expectedError);
+            Assert.assertEquals(mainPage.maxCountOfBabies(), expectedError);
         }
 
         @After
