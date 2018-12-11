@@ -73,7 +73,7 @@ public class MainTest {
     }
 
     @Test
-    public void weightOfMoscowLuggageIs40Kilos() {
+    public void maxWeightInKilos() {
         String expected = "40kgs";
         String actual;
 
@@ -87,7 +87,7 @@ public class MainTest {
 
     @Test
     public void checkThatHotelsStayInRightCity() {
-        String expected = "Барселона";
+        String expectedCity = "Барселона";
         String actual;
 
         mainPageSteps.goToHotelsPage();
@@ -102,7 +102,7 @@ public class MainTest {
 
         actual = bookingPageSteps.checkCityName();
 
-         Assert.assertTrue(actual.contains(expected));
+         Assert.assertTrue(actual.contains(expectedCity));
     }
 
     @Test
