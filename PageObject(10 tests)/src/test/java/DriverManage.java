@@ -3,7 +3,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Util {
+import java.util.Set;
+
+public class DriverManage {
     public static void waitForPageLoadComplete(WebDriver driver, int specifiedTimeout) {
         Wait<WebDriver> wait = new WebDriverWait(driver, specifiedTimeout);
         wait.until(driver1 -> String

@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 import pages.*;
 import steps.*;
 
-import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -34,7 +33,6 @@ public class MainTest {
 
         driver.get("https://www.emirates.com/en");
         driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-//        driver.manage().window().fullscreen();
 
         mainPageSteps = new MainPageSteps(new MainPage(driver, wait));
         baggagePageSteps = new BaggagePageSteps(new BaggagePage(driver));
@@ -95,12 +93,12 @@ public class MainTest {
         mainPageSteps.goToHotelsPage();
         hotelsPageSteps.findHotel("Barcelona");
 
-        Util.wait(1000);
+        DriverManage.wait(1000);
 
 
         Set<String> tabs = driver.getWindowHandles();
         driver.switchTo().window(tabs.toArray()[1].toString());
-        Util.waitForPageLoadComplete(driver, 30);
+        DriverManage.waitForPageLoadComplete(driver, 30);
 
         actual = bookingPageSteps.checkCityName();
 
@@ -132,11 +130,11 @@ public class MainTest {
 
         mainPageSteps.goToRentalPage();
 
-        Util.wait(1000);
+        DriverManage.wait(1000);
 
         Set<String> tabs = driver.getWindowHandles();
         driver.switchTo().window(tabs.toArray()[1].toString());
-        Util.waitForPageLoadComplete(driver, 30);
+        DriverManage.waitForPageLoadComplete(driver, 30);
 
         actual = rentalPageSteps.checkLocation();
 
