@@ -89,13 +89,14 @@ public class MainTest {
 
     @Test
     public void checkThatHotelsStayInRightCity() {
-        String expected = "Barcelona";
+        String expected = "Барселона";
         String actual;
 
         mainPageSteps.goToHotelsPage();
-        hotelsPageSteps.findHotel(expected);
+        hotelsPageSteps.findHotel("Barcelona");
 
         Util.wait(1000);
+
 
         Set<String> tabs = driver.getWindowHandles();
         driver.switchTo().window(tabs.toArray()[1].toString());
@@ -103,7 +104,7 @@ public class MainTest {
 
         actual = bookingPageSteps.checkCityName();
 
-        Assert.assertTrue(actual.contains(expected));
+         Assert.assertTrue(actual.contains(expected));
     }
 
     @Test
