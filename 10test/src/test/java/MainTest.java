@@ -85,25 +85,25 @@ public class MainTest {
         Assert.assertEquals(actual, expected);
     }
 
-    @Test
-    public void checkThatHotelsStayInRightCity() {
-        String expectedCity = "Барселона";
-        String actual;
+    // @Test
+    // public void checkThatHotelsStayInRightCity() {
+    //     String expectedCity = "Барселона";
+    //     String actual;
 
-        mainPageSteps.goToHotelsPage();
-        hotelsPageSteps.findHotel("Barcelona");
+    //     mainPageSteps.goToHotelsPage();
+    //     hotelsPageSteps.findHotel("Barcelona");
 
-        DriverManage.wait(1000);
+    //     DriverManage.wait(1000);
 
 
-        Set<String> tabs = driver.getWindowHandles();
-        driver.switchTo().window(tabs.toArray()[1].toString());
-        DriverManage.waitForPageLoadComplete(driver, 30);
+    //     Set<String> tabs = driver.getWindowHandles();
+    //     driver.switchTo().window(tabs.toArray()[1].toString());
+    //     DriverManage.waitForPageLoadComplete(driver, 30);
 
-        actual = bookingPageSteps.checkCityName();
+    //     actual = bookingPageSteps.checkCityName();
 
-         Assert.assertTrue(actual.contains(expectedCity));
-    }
+    //      Assert.assertTrue(actual.contains(expectedCity));
+    // }
 
     @Test
     public void checkStatusOfFlightWhichDoesNotExist() {
