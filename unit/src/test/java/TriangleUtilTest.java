@@ -58,12 +58,6 @@ public class TriangleUtilTest {
 
     @Test
     @UseDataProvider("sidesAreNotValid")
-    public void assertFalseWhenSidesAreValid(double a, double b, double c) {
-        Assert.assertFalse(new TriangleUtil(a, b, c).canCreateTriangle());
-    }
-
-    @Test
-    @UseDataProvider("sidesAreNotValid")
     public void assertFalseWhenSidesAreNotValid(double a, double b, double c) {
         Assert.assertFalse(new TriangleUtil(a, b, c).canCreateTriangle());
     }
