@@ -28,7 +28,11 @@ public class MainTest {
 
     @BeforeMethod
     public void openPage() {
-        driver = new ChromeDriver();
+    	ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+        options.addArguments("--no-sandbox"); // Bypass OS security model
+        driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, 10);
 
         driver.get("https://www.emirates.com/en");
