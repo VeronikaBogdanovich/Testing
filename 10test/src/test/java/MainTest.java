@@ -105,11 +105,11 @@ public class MainTest {
     //      Assert.assertTrue(actual.contains(expectedCity));
     // }
 
-    @Test
-    public void checkStatusOfFlightWhichDoesNotExist() {
-        String expectedError = "There is an error on this page:";
-        Assert.assertEquals(mainPageSteps.checkStatusOfFlights(), expectedError);
-    }
+    // @Test
+    // public void checkStatusOfFlightWhichDoesNotExist() {
+    //     String expectedError = "There is an error on this page:";
+    //     Assert.assertEquals(mainPageSteps.checkStatusOfFlights(), expectedError);
+    // }
 
     @Test
     public void checkMaxCountOfPassengersOnBoard() {
