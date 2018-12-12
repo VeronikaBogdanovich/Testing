@@ -87,7 +87,7 @@ public class MainTest {
 
     @Test
     public void checkThatHotelsStayInRightCity() {
-        String expectedCity = "Барселона";
+        String expectedCity = "Barcelona";
         String actual;
 
         mainPageSteps.goToHotelsPage();
